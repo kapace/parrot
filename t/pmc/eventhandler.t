@@ -21,7 +21,6 @@ Tests the EventHandler PMC used by the event system.
     plan(6)
 
     create_an_event_and_set_attributes()
-    # Invoke broken, see below.
     invoke_eventhandler()
 .end
 
@@ -84,7 +83,7 @@ Tests the EventHandler PMC used by the event system.
     code = get_global 'test_handler'
     eh   = new ['EventHandler'], code
 
-   print "Invoking eh\n"
+    # See ticket http://trac.parrot.org/parrot/ticket/1894
     eh()
 .end
 

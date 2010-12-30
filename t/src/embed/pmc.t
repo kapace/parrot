@@ -24,7 +24,7 @@ Tests PMC API support.
 
 =cut
 
-plan tests => 6;
+plan tests => 7;
 
 c_output_is( <<'CODE', <<'OUTPUT', "get/set_keyed_int" );
 
@@ -80,7 +80,7 @@ int main(int argc, char* argv[])
     Parrot_PMC p_float = NULL;
     Parrot_PMC p_key = NULL, p_class = NULL;
     Parrot_String s_numstr = NULL;
-    char * float_class[] = { "Float" };
+    const char * float_class[] = { "Float" };
 
     GET_INIT_STRUCT(initargs);
     Parrot_api_make_interpreter(NULL, 0, initargs, &interpmc);
@@ -210,8 +210,8 @@ int main(int argc, char* argv[])
     Parrot_PMC interpmc = NULL;
     Parrot_String s_str, s_str2;
     Parrot_PMC p_key, p_class, p_pmc;
-    char* string_class[] = { "String" };
-    char* float_class[] = { "Float" };
+    const char* string_class[] = { "String" };
+    const char* float_class[] = { "Float" };
     char *c_out;
 
     GET_INIT_STRUCT(initargs);
